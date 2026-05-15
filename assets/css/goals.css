@@ -1,0 +1,17 @@
+.goals{
+    padding:100px 10%;
+}
+
+.goal-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.goal-card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+}

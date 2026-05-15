@@ -1,0 +1,410 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+:root{
+
+    --bg:#020817;
+    --card:#071226;
+
+    --primary:#3b82f6;
+    --secondary:#7c3aed;
+
+    --text:#ffffff;
+    --paragraph:#cbd5e1;
+
+}
+
+body{
+
+    background:var(--bg);
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* BACKGROUND */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+    height:700px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(59,130,246,0.18),
+        transparent 70%
+    );
+
+    top:-250px;
+    left:-200px;
+
+    z-index:-1;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+    height:700px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(124,58,237,0.18),
+        transparent 70%
+    );
+
+    bottom:-300px;
+    right:-200px;
+
+    z-index:-1;
+
+}
+
+/* HEADER */
+
+.header{
+
+    width:100%;
+
+    padding:22px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+
+    z-index:999;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(2,8,23,0.7);
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.08);
+
+}
+
+.logo{
+
+    font-size:38px;
+    font-weight:800;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--primary),
+        #60a5fa
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    display:flex;
+    gap:40px;
+
+}
+
+.navbar a{
+
+    color:white;
+
+    text-decoration:none;
+
+    position:relative;
+
+}
+
+.navbar a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0%;
+    height:2px;
+
+    background:#3b82f6;
+
+    left:0;
+    bottom:-6px;
+
+    transition:0.4s;
+
+}
+
+.navbar a:hover::after,
+.navbar .active::after{
+    width:100%;
+}
+
+.active{
+    color:#60a5fa;
+}
+
+/* GITHUB BUTTON */
+
+.github-btn{
+
+    padding:12px 22px;
+
+    border-radius:15px;
+
+    border:
+    1px solid rgba(59,130,246,0.4);
+
+    color:white;
+
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+}
+
+/* CONTACT SECTION */
+
+.contact-section{
+
+    min-height:100vh;
+
+    padding:160px 8% 80px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+/* LEFT */
+
+.contact-tag{
+
+    color:#60a5fa;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+}
+
+.contact-info h1{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+}
+
+.contact-description{
+
+    color:var(--paragraph);
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+/* INFO */
+
+.info-container{
+
+    margin-top:50px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.info-box{
+
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:
+    rgba(7,18,38,0.7);
+
+    border:
+    1px solid rgba(255,255,255,0.06);
+
+}
+
+.info-icon{
+
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+.info-icon i{
+    font-size:30px;
+}
+
+/* FORM */
+
+.contact-form-container{
+
+    padding:45px;
+
+    border-radius:35px;
+
+    background:
+    rgba(7,18,38,0.82);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+}
+
+.contact-form-container h2{
+
+    font-size:38px;
+
+    margin-bottom:35px;
+
+}
+
+.input-box{
+    margin-bottom:25px;
+}
+
+.input-box input,
+.input-box textarea{
+
+    width:100%;
+
+    padding:18px 20px;
+
+    border:none;
+    outline:none;
+
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border:
+    1px solid rgba(255,255,255,0.06);
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+.input-box textarea{
+
+    height:180px;
+
+    resize:none;
+
+}
+
+.submit-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    font-size:17px;
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+#success-message{
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    .contact-section{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .header{
+
+        flex-direction:column;
+        gap:20px;
+
+    }
+
+}
