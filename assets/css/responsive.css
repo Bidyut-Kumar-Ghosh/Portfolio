@@ -7,6 +7,8 @@
     border: none;
     padding: 0.5rem;
     gap: 0.4rem;
+    margin-left: auto;
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -36,36 +38,73 @@
     }
 
     .navbar {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        gap: 0;
-        padding: 2rem 0;
-        z-index: 999;
+        position: fixed !important;
+        top: 70px !important;
+        left: auto !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 350px !important;
+        max-width: 90vw !important;
+        display: none !important;
+        flex-direction: column !important;
+        margin: 0 !important;
+        gap: 0 !important;
+        background: linear-gradient(135deg, rgba(2, 8, 23, 0.99) 0%, rgba(2, 8, 23, 0.96) 100%) !important;
+        backdrop-filter: blur(25px) !important;
+        padding: 1.5rem 0 !important;
+        z-index: 1000 !important;
+        overflow-y: auto !important;
+        box-shadow: -3px 0 25px rgba(0, 0, 0, 0.6) !important;
+        border-left: 1px solid rgba(59, 130, 246, 0.2) !important;
+        animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 
     .navbar.active {
-        display: flex;
+        display: flex !important;
     }
 
     .navbar a {
-        padding: 1rem 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
+        display: block !important;
+        width: 100% !important;
+        padding: 1.3rem 1.8rem !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+        border-left: none !important;
+        transition: all 0.3s ease !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        color: var(--text) !important;
     }
 
     .navbar a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(59, 130, 246, 0.2) !important;
+        padding-left: 2.2rem !important;
+        color: #60a5fa !important;
+        border-left: 3px solid #3b82f6 !important;
+    }
+
+    .navbar a.active {
+        color: #60a5fa !important;
+        background-color: rgba(59, 130, 246, 0.15) !important;
+        border-left: 3px solid #3b82f6 !important;
+        padding-left: 1.5rem !important;
     }
 
     .hero{
         flex-direction:column;
         text-align:center;
-        padding-top:50px;
+        padding-top:100px;
+        padding-bottom:50px;
     }
 
     .hero-image img{
@@ -73,7 +112,70 @@
         margin-top:40px;
     }
 
-    .navbar{
-        display:none;
+    .header {
+        padding: 16px 5%;
+    }
+
+    .github-btn {
+        display: none;
+    }
+}
+
+@media(max-width:768px){
+    .header {
+        padding: 14px 4%;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .hero {
+        padding: 120px 5% 40px;
+        gap: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero-content h3 {
+        font-size: 22px;
+    }
+
+    .navbar {
+        max-width: 300px;
+    }
+}
+
+@media(max-width:480px){
+    .header {
+        padding: 12px 3%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero {
+        padding: 100px 4% 30px;
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content h3 {
+        font-size: 18px;
+    }
+
+    .navbar {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .navbar a {
+        padding: 1rem 1.5rem;
     }
 }
